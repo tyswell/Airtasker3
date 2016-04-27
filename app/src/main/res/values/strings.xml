@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Airtasker</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="menu_picklup_label">picklup</string>
+    <string name="menu_assembly_label">assembly</string>
+    <string name="menu_handyman_label">handyman</string>
+    <string name="menu_cleaning_label">cleaning</string>
+    <string name="menu_moving_label">moving</string>
+    <string name="menu_maintain_label">maintain</string>
+    <string name="menu_photography_label">photo</string>
+    <string name="menu_office_label">office</string>
+    <string name="menu_computer_label">computer</string>
+    <string name="menu_other_label">other</string>
+
+    <string name="footer_createTask_label">create task</string>
+    <string name="footer_myTask_label">my task</string>
+    <string name="footer_browseTask_label">browse task</string>
+    <string name="footer_pm_label">private message</string>
+    <string name="footer_subMenu_label">sub menu</string>
+
+    <string name="createtask_detail_label">Detail</string>
+    <string name="createtask_location_label">Location</string>
+    <string name="createtask_budget_label">Budget</string>
+    <string name="createtask_continue_label">Continue</string>
+
+    <string name="createtask_detail_title_label">Task Title</string>
+    <string name="createtask_detail_detail_label">Describe your delivery task</string>
+    <string name="createtask_detail_upload_label">Upload Attachment(s)</string>
+
+    <string name="createtask_location_head_label">How can this task be completed?</string>
+    <string name="createtask_location_inperson_label">In Person</string>
+    <string name="createtask_location_online_label">Online</string>
+    <string name="createtask_location_location_label">Task Location</string>
+    <string name="createtask_location_date_label">Due Date</string>
+
+</resources>
