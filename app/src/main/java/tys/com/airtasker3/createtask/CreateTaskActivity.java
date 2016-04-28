@@ -7,13 +7,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
+import org.greenrobot.eventbus.EventBus;
+
 import tys.com.airtasker3.R;
+import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.ViewPagerAdapter;
 
 /**
  * Created by chokechaic on 4/27/2016.
  */
-public class CreateTaskActivity extends AppCompatActivity {
+public class CreateTaskActivity extends BaseActivity {
 
     private Toolbar toolbar;
     private ViewPager viewPager;
@@ -30,16 +33,6 @@ public class CreateTaskActivity extends AppCompatActivity {
 
         viewPager = (ViewPager) findViewById(R.id.viewpagerX);
         setupViewPager(viewPager);
-
-        continueBtn = (Button) findViewById(R.id.continueBtn);
-        continueBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (viewPager.getCurrentItem() == 0) {
-                    viewPager.setCurrentItem(1);
-                }
-            }
-        });
     }
 
     @Override

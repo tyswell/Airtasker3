@@ -5,9 +5,19 @@
     tools:context="tys.com.pageframework.fragments.ThreeFragment">
 
     <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="three"
+    android:textSize="40dp"
+    android:textStyle="bold"
+        android:id="@+id/xxx"
+    android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_below="@+id/xxx"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="three"
         android:textSize="40dp"
         android:textStyle="bold"
         android:layout_centerInParent="true"/>

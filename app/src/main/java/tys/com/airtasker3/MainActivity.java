@@ -7,16 +7,17 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import tys.com.airtasker3.menu.MenuFragment;
+import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.ViewPagerAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -31,9 +32,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
 
-        //MainMenu
-//        GridView gridView = (GridView) findViewById(R.id.menuGrid);
-//        MenuGrid grid = new MenuGrid(gridView, this);
     }
 
     private void setupTabIcons() {
