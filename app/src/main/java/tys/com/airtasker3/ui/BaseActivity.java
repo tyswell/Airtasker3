@@ -17,22 +17,22 @@ import tys.com.airtasker3.authen.util.AuthenticationConstant;
  */
 public class BaseActivity extends AppCompatActivity {
 
-    private AccountManager am;
+    private AccountManager accountManager;
     private Bundle bnd;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        am = AccountManager.get(this);
+        accountManager = AccountManager.get(this);
     }
 
     private void performLogout() {
-        Account[] accounts = am.getAccountsByType(AuthenticationConstant.ACCOUNTYTPE);
+        Account[] accounts = accountManager.getAccountsByType(AuthenticationConstant.ACCOUNTYTPE);
         if (accounts.length != 0) {
             for (int i = 0; i < accounts.length; i++) {
-                am.clearPassword(accounts[i]);
-                am.invalidateAuthToken(AuthenticationConstant.ACCOUNTYTPE, am.getAuthToken(accounts[i],
+                accountManager.clearPassword(accounts[i]);
+                accountManager.invalidateAuthToken(AuthenticationConstant.ACCOUNTYTPE, accountManager.getAuthToken(accounts[i],
                         AuthenticationConstant.AUTHTOKEN_TYPE_FULL_ACCESS,
                         null,
                         true,
@@ -48,7 +48,7 @@ public class BaseActivity extends AppCompatActivity {
                         }, null).toString());
 
                 if (Build.VERSION.SDK_INT < 23) { // use deprecated method
-                    am.removeAccount(accounts[i], new AccountManagerCallback<Boolean>() {
+                    accountManager.removeAccount(accounts[i], new AccountManagerCallback<Boolean>() {
                         @Override
                         public void run(AccountManagerFuture<Boolean> future) {
                             try {
@@ -62,7 +62,7 @@ public class BaseActivity extends AppCompatActivity {
                         }
                     }, null);
                 } else {
-                    am.removeAccount(accounts[i], this, new AccountManagerCallback<Bundle>() {
+                    accountManager.removeAccount(accounts[i], this, new AccountManagerCallback<Bundle>() {
                         @Override
                         public void run(AccountManagerFuture<Bundle> future) {
                             try {
@@ -92,7 +92,7 @@ public class BaseActivity extends AppCompatActivity {
      * @param authTokenType
      */
     private void addNewAccount(String accountType, String authTokenType) {
-        final AccountManagerFuture<Bundle> future = am.addAccount(accountType, authTokenType, null, null, this, new AccountManagerCallback<Bundle>() {
+        final AccountManagerFuture<Bundle> future = accountManager.addAccount(accountType, authTokenType, null, null, this, new AccountManagerCallback<Bundle>() {
             @Override
             public void run(AccountManagerFuture<Bundle> future) {
                 try {
@@ -106,7 +106,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     private void checkAuthen() {
-        AccountManagerFuture<Bundle> future = am.getAuthTokenByFeatures(AuthenticationConstant.ACCOUNTYTPE,
+        AccountManagerFuture<Bundle> future = accountManager.getAuthTokenByFeatures(AuthenticationConstant.ACCOUNTYTPE,
                 AuthenticationConstant.AUTHTOKEN_TYPE_FULL_ACCESS,
                 null,
                 this,
