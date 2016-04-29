@@ -1,25 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="tys.com.pageframework.fragments.ThreeFragment">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="three"
-    android:textSize="40dp"
-    android:textStyle="bold"
-        android:id="@+id/xxx"
-    android:layout_centerInParent="true"/>
-
-    <TextView
-        android:layout_below="@+id/xxx"
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:paddingTop="50dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:id="@+id/headerLabel"
+        android:text="@string/createtask_location_head_label"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/headerLabel"
+        android:id="@+id/linearLayout">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createtask_location_inperson_label"
+            android:id="@+id/inpersonBtn"
+            android:layout_alignTop="@+id/autoTextLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/createtask_location_online_label"
+            android:id="@+id/onlineBtn"
+            android:layout_toRightOf="@+id/inpersonBtn"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/createtask_location_location_label"
+        android:id="@+id/autoTextLabel"
+        android:gravity="left"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <AutoCompleteTextView
+        android:id="@+id/autoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Place Here"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/autoTextLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/createtask_location_date_label"
+        android:id="@+id/dateView"
+        android:layout_below="@+id/autoText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:gravity="left" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dateText"
+        android:layout_below="@+id/dateView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 
 </RelativeLayout>

@@ -49,9 +49,6 @@ public class DetailFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (vp.getCurrentItem() == 0) {
-                    Bean a = new Bean();
-                    a.setAa(ed.getText().toString());
-                    EventBus.getDefault().post(a);
                     vp.setCurrentItem(1);
                 }
             }
