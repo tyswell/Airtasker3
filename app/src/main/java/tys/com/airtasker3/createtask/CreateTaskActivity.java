@@ -11,6 +11,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import tys.com.airtasker3.R;
 import tys.com.airtasker3.ui.BaseActivity;
+import tys.com.airtasker3.ui.NonSwipeViewPager;
 import tys.com.airtasker3.ui.ViewPagerAdapter;
 
 /**
@@ -19,7 +20,7 @@ import tys.com.airtasker3.ui.ViewPagerAdapter;
 public class CreateTaskActivity extends BaseActivity {
 
     private Toolbar toolbar;
-    private ViewPager viewPager;
+    private NonSwipeViewPager viewPager;
     private Button continueBtn;
 
     @Override
@@ -31,7 +32,7 @@ public class CreateTaskActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        viewPager = (ViewPager) findViewById(R.id.viewpagerX);
+        viewPager = (NonSwipeViewPager) findViewById(R.id.viewpagerX);
         setupViewPager(viewPager);
     }
 
