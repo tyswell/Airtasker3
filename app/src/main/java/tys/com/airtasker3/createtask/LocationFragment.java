@@ -3,6 +3,7 @@ package tys.com.airtasker3.createtask;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.InputType;
 import android.util.Log;
@@ -34,6 +35,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import tys.com.airtasker3.R;
+import tys.com.airtasker3.ui.NonSwipeViewPager;
 import tys.com.airtasker3.util.PlaceArrayAdaptor;
 
 /**
@@ -44,6 +46,8 @@ public class LocationFragment extends Fragment implements
         GoogleApiClient.ConnectionCallbacks{
 
     private static final String LOG_TAG = "LocationFragment";
+
+    private NonSwipeViewPager vp;
 
     private ToggleButton typeWorkBtn;
 
@@ -58,12 +62,14 @@ public class LocationFragment extends Fragment implements
     private EditText dateText;
     private SimpleDateFormat dateFormatter;
 
+    private Button continueBtn;
+
     public LocationFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+      public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
 
@@ -76,6 +82,8 @@ public class LocationFragment extends Fragment implements
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        vp = (NonSwipeViewPager) getActivity().findViewById(R.id.viewpagerX);
 
         typeWorkBtn = (ToggleButton) view.findViewById(R.id.typeWorkBtn);
         typeWorkBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -127,7 +135,14 @@ public class LocationFragment extends Fragment implements
 
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
-
+        continueBtn = (Button) view.findViewById(R.id.continueBtn);
+        continueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Toast.makeText(getContext(), "BBBBB" + vp.getCurrentItem(), Toast.LENGTH_LONG).show();
+                    vp.setCurrentItem(2);
+            }
+        });
     }
 
     private AdapterView.OnItemClickListener mAutocompleteClickListener

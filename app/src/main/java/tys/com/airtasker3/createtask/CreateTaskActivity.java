@@ -21,7 +21,6 @@ public class CreateTaskActivity extends BaseActivity {
 
     private Toolbar toolbar;
     private NonSwipeViewPager viewPager;
-    private Button continueBtn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +50,7 @@ public class CreateTaskActivity extends BaseActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new DetailFragment(), "ONE");
         adapter.addFrag(new LocationFragment(), "TWO");
+        adapter.addFrag(new BudgetFragment(), "THREE");
         viewPager.setAdapter(adapter);
     }
 }

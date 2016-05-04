@@ -10,18 +10,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import tys.com.airtasker3.R;
+import tys.com.airtasker3.ui.NonSwipeViewPager;
 
 /**
  * Created by chokechaic on 4/27/2016.
  */
 public class DetailFragment extends Fragment {
 
-    private ViewPager vp;
+    private NonSwipeViewPager vp;
     private Button continueBtn;
     private EditText ed;
 
@@ -40,17 +42,16 @@ public class DetailFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        vp = (ViewPager) getActivity().findViewById(R.id.viewpagerX);
+        vp = (NonSwipeViewPager) getActivity().findViewById(R.id.viewpagerX);
 
         ed = (EditText) view.findViewById(R.id.detail_detail_edit);
 
-        continueBtn = (Button) getActivity().findViewById(R.id.continueBtn);
+        continueBtn = (Button) view.findViewById(R.id.continueBtn);
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (vp.getCurrentItem() == 0) {
-                    vp.setCurrentItem(1);
-                }
+                Toast.makeText(getActivity(), "AAAA" +vp.getCurrentItem(), Toast.LENGTH_LONG).show();
+                vp.setCurrentItem(1);
             }
         });
     }
