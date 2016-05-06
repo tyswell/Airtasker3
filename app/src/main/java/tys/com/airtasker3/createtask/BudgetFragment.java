@@ -2,7 +2,6 @@ package tys.com.airtasker3.createtask;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,8 +15,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import java.util.logging.Logger;
-
 import tys.com.airtasker3.R;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 
@@ -26,7 +23,7 @@ import tys.com.airtasker3.ui.NonSwipeViewPager;
  */
 public class BudgetFragment extends Fragment implements TextView.OnEditorActionListener {
 
-    private NonSwipeViewPager vp;
+    private NonSwipeViewPager nvp;
     private ToggleButton typeBudgetBtn;
     private TextView totalPriceView;
     private EditText totalPriceEdit;
@@ -52,7 +49,7 @@ public class BudgetFragment extends Fragment implements TextView.OnEditorActionL
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        vp = (NonSwipeViewPager) getActivity().findViewById(R.id.viewpagerX);
+        nvp = (NonSwipeViewPager) getActivity().findViewById(R.id.viewpagerX);
 
         typeBudgetBtn  = (ToggleButton) view.findViewById(R.id.typeBudgetBtn);
         typeBudgetBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -80,7 +77,7 @@ public class BudgetFragment extends Fragment implements TextView.OnEditorActionL
         postATaskBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (vp.getCurrentItem() == 2) {
+                if (nvp.getCurrentItem() == 2) {
                     Toast.makeText(getContext(), "End process", Toast.LENGTH_LONG).show();
                 }
             }
