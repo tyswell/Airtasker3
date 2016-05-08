@@ -46,6 +46,14 @@
     <string name="createtask_budget_estimatedbudget_label">Estimated Budget</string>
     <string name="createtask_budget_posttask_label">Post A Task</string>
 
+    <string name="mytask_comments">comments</string>
+    <string name="mytask_offer">offer</string>
+
+    <string name="task_open_posted_by">Posted by</string>
+    <string name="task_open_description">Description</string>
+    <string name="task_open_offer">Offer</string>
+    <string name="task_open_comments">Comments</string>
+
     <string name="title_activity_login">Login</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="register_title">Register</string>
