@@ -6,6 +6,7 @@ android {
 
     defaultConfig {
         applicationId "tys.com.airtasker3"
+        multiDexEnabled true
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -16,6 +17,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    dexOptions {
+        incremental = true;
+        preDexLibraries = false
+        javaMaxHeapSize "4g" // 2g should be also OK
     }
 }
 
@@ -29,10 +35,9 @@ dependencies {
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'cz.msebera.android:httpclient:4.3.6'
     compile 'com.android.support:recyclerview-v7:23.1.1'
-
     // volley
     compile 'com.android.volley:volley:1.0.0'
-
     // Glide
     compile 'com.github.bumptech.glide:glide:3.7.0'
+
 }

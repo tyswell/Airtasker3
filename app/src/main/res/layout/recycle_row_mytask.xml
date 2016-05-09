@@ -35,29 +35,29 @@
     <TextView
         android:id="@+id/commentNumView"
         android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/locationView"
-        android:layout_toRightOf="@id/profilePic"/>
+        android:layout_below="@+id/profilePic"
+        android:layout_alignParentLeft="true"/>
     <TextView
         android:id="@+id/commentView"
         android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_height="wrap_content"
         android:text="@string/mytask_comments"
-        android:layout_toRightOf="@id/commentNumView"/>
+        android:layout_below="@+id/profilePic"
+        android:layout_toRightOf="@+id/commentNumView"
+        />
     <TextView
         android:id="@+id/offerNumView"
         android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/profilePic"
         android:layout_toRightOf="@id/commentView"/>
     <TextView
         android:id="@+id/offerView"
         android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_height="wrap_content"
         android:text="@string/mytask_offer"
+        android:layout_below="@+id/profilePic"
         android:layout_toRightOf="@id/offerNumView"/>
 
 </RelativeLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import tys.com.airtasker3.menu.MenuFragment;
+import tys.com.airtasker3.mytask.MytaskFragment;
 import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.ViewPagerAdapter;
 
@@ -45,6 +46,7 @@ public class MainActivity extends BaseActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new MenuFragment(), "ONE");
+        adapter.addFrag(new MytaskFragment(), "TWO");
         viewPager.setAdapter(adapter);
     }
 }
