@@ -16,6 +16,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import tys.com.airtasker3.R;
+import tys.com.airtasker3.constant.Page;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 
 /**
@@ -50,8 +51,7 @@ public class DetailFragment extends Fragment {
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "AAAA" +vp.getCurrentItem(), Toast.LENGTH_LONG).show();
-                vp.setCurrentItem(1);
+                vp.setCurrentItem(Page.CREATETASK_LOCATION_PAGE);
             }
         });
     }

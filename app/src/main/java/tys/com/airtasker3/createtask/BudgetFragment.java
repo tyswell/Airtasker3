@@ -1,5 +1,7 @@
 package tys.com.airtasker3.createtask;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
@@ -15,7 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import tys.com.airtasker3.MainActivity;
 import tys.com.airtasker3.R;
+import tys.com.airtasker3.constant.Page;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 
 /**
@@ -77,8 +81,10 @@ public class BudgetFragment extends Fragment implements TextView.OnEditorActionL
         postATaskBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nvp.getCurrentItem() == 2) {
-                    Toast.makeText(getContext(), "End process", Toast.LENGTH_LONG).show();
+                if (nvp.getCurrentItem() == Page.CREATETASK_BUDGET_PAGE) {
+                    Intent returnIntent = new Intent();
+                    getActivity().setResult(Activity.RESULT_OK, returnIntent);
+                    getActivity().finish();
                 }
             }
         });

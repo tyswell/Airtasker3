@@ -117,7 +117,7 @@ public class BaseActivity extends AppCompatActivity {
                     public void run(AccountManagerFuture<Bundle> future) {
                         try {
                             bnd = future.getResult();
-                            Toast.makeText(getBaseContext(), bnd.getString(AccountManager.KEY_ACCOUNT_NAME), Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getBaseContext(), bnd.getString(AccountManager.KEY_ACCOUNT_NAME), Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

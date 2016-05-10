@@ -35,6 +35,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import tys.com.airtasker3.R;
+import tys.com.airtasker3.constant.Page;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 import tys.com.airtasker3.util.PlaceArrayAdaptor;
 
@@ -139,8 +140,7 @@ public class LocationFragment extends Fragment implements
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Toast.makeText(getContext(), "BBBBB" + vp.getCurrentItem(), Toast.LENGTH_LONG).show();
-                    vp.setCurrentItem(2);
+                    vp.setCurrentItem(Page.CREATETASK_BUDGET_PAGE);
             }
         });
     }
