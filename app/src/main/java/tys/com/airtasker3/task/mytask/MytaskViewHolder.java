@@ -1,11 +1,9 @@
-package tys.com.airtasker3.mytask;
+package tys.com.airtasker3.task.mytask;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import tys.com.airtasker3.R;
 

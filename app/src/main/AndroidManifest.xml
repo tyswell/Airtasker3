@@ -38,6 +38,11 @@
             android:label="@string/register_title" >
         </activity>
 
+        <activity
+            android:name=".task.TaskActivity"
+            android:label="@string/task_title" >
+        </activity>
+
         <service android:name=".authen.util.AuthenticationService">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator"/>

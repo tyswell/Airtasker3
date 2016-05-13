@@ -11,4 +11,6 @@ public class Page {
     public static final int CREATETASK_LOCATION_PAGE = 1;
     public static final int CREATETASK_BUDGET_PAGE = 2;
 
+    public static final int TASK_PAGE = 0;
+
 }

@@ -2,12 +2,12 @@ package tys.com.airtasker3;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import tys.com.airtasker3.menu.MenuFragment;
-import tys.com.airtasker3.mytask.MytaskFragment;
+import tys.com.airtasker3.task.TaskFragment;
+import tys.com.airtasker3.task.mytask.MytaskFragment;
 import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.ViewPagerAdapter;
 

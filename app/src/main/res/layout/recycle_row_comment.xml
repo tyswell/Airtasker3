@@ -26,6 +26,7 @@
         android:id="@+id/commentView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/profilePic"
         android:layout_below="@+id/usernameView"/>
 
 </RelativeLayout>

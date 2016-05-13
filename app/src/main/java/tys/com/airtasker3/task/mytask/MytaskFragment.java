@@ -1,6 +1,7 @@
-package tys.com.airtasker3.mytask;
+package tys.com.airtasker3.task.mytask;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -15,7 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tys.com.airtasker3.R;
+import tys.com.airtasker3.createtask.CreateTaskActivity;
 import tys.com.airtasker3.model.task.MyTask;
+import tys.com.airtasker3.task.TaskActivity;
 import tys.com.airtasker3.ui.recycleview.DividerItemDecoration;
 import tys.com.airtasker3.ui.recycleview.RecycleClickListener;
 import tys.com.airtasker3.ui.recycleview.RecyclerTouchListener;
@@ -73,7 +76,7 @@ public class MytaskFragment extends Fragment {
         @Override
         public void onClick(View view, int position) {
             MyTask movie = myTasks.get(position);
-            Toast.makeText(getActivity(), movie.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+            startActivityForResult(new Intent(getContext(), TaskActivity.class), 1);
         }
     };
 
@@ -83,7 +86,7 @@ public class MytaskFragment extends Fragment {
 
         //TODO call WS
         myTasks.clear();
-        myTasks.addAll(TempMytaskModel.getModel(getActivity()));
+        myTasks.addAll(TempModel.getModel(getActivity()));
 
         adapter.notifyDataSetChanged();
         progressDialog.hide();

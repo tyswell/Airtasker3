@@ -51,6 +51,7 @@
     <string name="mytask_comments">comments</string>
     <string name="mytask_offer">offer</string>
 
+    <string name="task_title">TASK</string>
     <string name="task_open_posted_by">Posted by</string>
     <string name="task_open_description">Description</string>
     <string name="task_open_offer">Offer</string>
