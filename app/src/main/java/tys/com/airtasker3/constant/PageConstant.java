@@ -3,7 +3,7 @@ package tys.com.airtasker3.constant;
 /**
  * Created by chokechaic on 5/10/2016.
  */
-public class Page {
+public class PageConstant {
 
     public static final int CREATETASK_REQ_CODE = 1;
 

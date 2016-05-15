@@ -15,15 +15,12 @@ import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import cz.msebera.android.httpclient.Header;
 import tys.com.airtasker3.MainActivity;
 import tys.com.airtasker3.R;
 import tys.com.airtasker3.authen.service.AuthenticationService;
 import tys.com.airtasker3.authen.service.AuthenticationServiceImpl;
-import tys.com.airtasker3.authen.util.AuthenticationConstant;
+import tys.com.airtasker3.constant.AuthenticationConstant;
 
 /**
  * Created by chokechaic on 4/28/2016.
@@ -84,6 +81,8 @@ public class LoginActivity extends AccountAuthenticatorActivity {
                 service.signIn(email, password, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                        //TODO call real service
+
 //                        String str = new String(responseBody);
 //                        JSONObject obj = null;
 //                        String authToken = null;

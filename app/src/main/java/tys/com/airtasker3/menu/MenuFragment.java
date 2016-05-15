@@ -13,9 +13,9 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import tys.com.airtasker3.R;
-import tys.com.airtasker3.constant.Page;
+import tys.com.airtasker3.constant.PageConstant;
 import tys.com.airtasker3.createtask.CreateTaskActivity;
-import tys.com.airtasker3.ui.NonSwipeViewPager;
+import tys.com.airtasker3.ui.BaseActivity;
 
 /**
  * Created by chokechaic on 4/27/2016.
@@ -32,6 +32,8 @@ public class MenuFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Toast.makeText(getContext(), ((BaseActivity)getActivity()).getUser().getNativeUserId() + "||token = " + ((BaseActivity)getActivity()).getUser().getToken(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -55,7 +57,7 @@ public class MenuFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == Page.CREATETASK_REQ_CODE) {
+        if (requestCode == PageConstant.CREATETASK_REQ_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 viewPager.setCurrentItem(1);
             }

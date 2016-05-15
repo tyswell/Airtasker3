@@ -3,8 +3,6 @@ package tys.com.airtasker3.createtask;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.text.Html;
 import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,7 +33,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import tys.com.airtasker3.R;
-import tys.com.airtasker3.constant.Page;
+import tys.com.airtasker3.constant.PageConstant;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 import tys.com.airtasker3.util.PlaceArrayAdaptor;
 
@@ -140,7 +138,7 @@ public class LocationFragment extends Fragment implements
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    vp.setCurrentItem(Page.CREATETASK_BUDGET_PAGE);
+                    vp.setCurrentItem(PageConstant.CREATETASK_BUDGET_PAGE);
             }
         });
     }

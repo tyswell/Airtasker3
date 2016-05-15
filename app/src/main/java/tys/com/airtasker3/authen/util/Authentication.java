@@ -19,6 +19,7 @@ import cz.msebera.android.httpclient.Header;
 import tys.com.airtasker3.authen.LoginActivity;
 import tys.com.airtasker3.authen.service.AuthenticationServiceImpl;
 import tys.com.airtasker3.authen.service.AuthenticationService;
+import tys.com.airtasker3.constant.AuthenticationConstant;
 
 import static android.accounts.AccountManager.KEY_BOOLEAN_RESULT;
 
@@ -74,15 +75,19 @@ public class Authentication extends AbstractAccountAuthenticator {
                 service.signIn(account.name, password, new AsyncHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                        String str = new String(responseBody);
-                        JSONObject obj = null;
-                        String authToken = null;
-                        try {
-                            obj = new JSONObject(str);
-                            authToken = obj.getString("authToken");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        //TODO call real service
+//                        String str = new String(responseBody);
+//                        JSONObject obj = null;
+//                        String authToken = null;
+//                        try {
+//                            obj = new JSONObject(str);
+//                            authToken = obj.getString("authToken");
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+
+                        String authToken = "bad18eba1ff45jk7858b8ae88a77fa30";
+
                         result.putString( AccountManager.KEY_ACCOUNT_NAME, account.name );
                         result.putString( AccountManager.KEY_ACCOUNT_TYPE, account.type );
                         result.putString( AccountManager.KEY_AUTHTOKEN, authToken );

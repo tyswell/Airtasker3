@@ -1,5 +1,6 @@
 package tys.com.airtasker3.task;
 
+import android.accounts.AccountManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.DrawableTypeRequest;
 import com.bumptech.glide.Glide;
@@ -32,6 +34,7 @@ import tys.com.airtasker3.model.task.Task;
 import tys.com.airtasker3.model.task.TaskComment;
 import tys.com.airtasker3.model.task.TaskOffer;
 import tys.com.airtasker3.task.mytask.TempModel;
+import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.recycleview.DividerItemDecoration;
 import tys.com.airtasker3.ui.recycleview.RecycleClickListener;
 import tys.com.airtasker3.ui.recycleview.RecyclerTouchListener;
@@ -72,6 +75,13 @@ public class TaskFragment extends Fragment {
         return rootView;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        callWSMytask();
+    }
+
     private void initView(View rootView) {
         titleView = (TextView) rootView.findViewById(R.id.titleView);
         profilePic = (ImageView) rootView.findViewById(R.id.profilePic);
@@ -93,7 +103,7 @@ public class TaskFragment extends Fragment {
         configRecyclerView(offerRecycle, offerAdapter, offerListener, rootView.getContext());
         configRecyclerView(commentRecycle, commentAdapter, commentListener, rootView.getContext());
 
-        callWSMytask();
+
     }
 
     private void configRecyclerView(RecyclerView recyclerView, RecyclerView.Adapter adapter, RecycleClickListener listener, Context context) {

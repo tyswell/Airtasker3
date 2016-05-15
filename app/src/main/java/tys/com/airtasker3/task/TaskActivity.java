@@ -5,10 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
 import tys.com.airtasker3.R;
-import tys.com.airtasker3.constant.Page;
-import tys.com.airtasker3.createtask.BudgetFragment;
-import tys.com.airtasker3.createtask.DetailFragment;
-import tys.com.airtasker3.createtask.LocationFragment;
+import tys.com.airtasker3.constant.PageConstant;
 import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 import tys.com.airtasker3.ui.ViewPagerAdapter;
@@ -37,7 +34,7 @@ public class TaskActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         int currentPage = viewPager.getCurrentItem();
-        if (currentPage == Page.TASK_PAGE) {
+        if (currentPage == PageConstant.TASK_PAGE) {
             super.onBackPressed();
         }
         else {
@@ -50,4 +47,5 @@ public class TaskActivity extends BaseActivity {
         adapter.addFrag(new TaskFragment(), "ONE");
         viewPager.setAdapter(adapter);
     }
+
 }

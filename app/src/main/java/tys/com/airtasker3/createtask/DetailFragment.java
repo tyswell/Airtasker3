@@ -1,22 +1,15 @@
 package tys.com.airtasker3.createtask;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 import tys.com.airtasker3.R;
-import tys.com.airtasker3.constant.Page;
+import tys.com.airtasker3.constant.PageConstant;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 
 /**
@@ -51,7 +44,7 @@ public class DetailFragment extends Fragment {
         continueBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                vp.setCurrentItem(Page.CREATETASK_LOCATION_PAGE);
+                vp.setCurrentItem(PageConstant.CREATETASK_LOCATION_PAGE);
             }
         });
     }

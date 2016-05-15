@@ -2,15 +2,10 @@ package tys.com.airtasker3.createtask;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Button;
-
-import org.greenrobot.eventbus.EventBus;
 
 import tys.com.airtasker3.R;
-import tys.com.airtasker3.constant.Page;
+import tys.com.airtasker3.constant.PageConstant;
 import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 import tys.com.airtasker3.ui.ViewPagerAdapter;
@@ -39,7 +34,7 @@ public class CreateTaskActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         int currentPage = viewPager.getCurrentItem();
-        if (currentPage == Page.CREATETASK_DETAIL_PAGE) {
+        if (currentPage == PageConstant.CREATETASK_DETAIL_PAGE) {
             super.onBackPressed();
         }
         else {

@@ -4,7 +4,6 @@ import android.accounts.AccountManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,7 +18,7 @@ import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
 import tys.com.airtasker3.R;
-import tys.com.airtasker3.authen.util.AuthenticationConstant;
+import tys.com.airtasker3.constant.AuthenticationConstant;
 import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.util.StringUtil;
 
