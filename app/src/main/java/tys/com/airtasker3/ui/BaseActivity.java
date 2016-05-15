@@ -23,17 +23,15 @@ import tys.com.airtasker3.model.User;
  */
 public class BaseActivity extends AuthenticaterActivity {
 
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
     public User getUser() {
-        User user = new User();
-        if (isFacebookUser()) {
-            user.setFacebookUserId(getUsername());
-        } else {
-            user.setNativeUserId(getUsername());
-        }
-
-        user.setToken(getCurrentToken());
-
-        return user;
+        return ((MainApplication)getApplicationContext()).user;
     }
 
 }

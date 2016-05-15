@@ -7,6 +7,7 @@ public class User {
 
     private String nativeUserId;
     private String facebookUserId;
+    private Boolean isFacebookLogin;
     private String token;
 
     public String getNativeUserId() {
@@ -31,5 +32,13 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public Boolean getFacebookLogin() {
+        return isFacebookLogin;
+    }
+
+    public void setFacebookLogin(Boolean facebookLogin) {
+        isFacebookLogin = facebookLogin;
     }
 }

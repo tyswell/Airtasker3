@@ -23,79 +23,11 @@ public class AuthenticaterActivity extends AppCompatActivity {
 
     private AccountManager accountManager;
     private Bundle bnd;
-    private String currentToken;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         accountManager = AccountManager.get(this);
-
-        fetchNativeAuthToken();
-    }
-
-    public String getUsername() {
-        return getCurrentAccount().name;
-    }
-
-    private Account getCurrentAccount() {
-        Account[] fbAccounts = accountManager.getAccountsByType(AuthenticationConstant.FACEBOOK_ACCOUNTYTPE);
-        if (fbAccounts.length > 0) {
-            return fbAccounts[0];
-        }
-
-        Account[] nativeAccounts = accountManager.getAccountsByType(AuthenticationConstant.ACCOUNTYTPE);
-        if (nativeAccounts.length > 0) {
-            return nativeAccounts[0];
-        }
-
-        return null;
-    }
-
-    public boolean isFacebookUser() {
-        Account[] fbAccounts = accountManager.getAccountsByType(AuthenticationConstant.FACEBOOK_ACCOUNTYTPE);
-        if (fbAccounts.length > 0) {
-            return true;
-        } else {
-            return false;
-        }
-
-
-    }
-
-    private void fetchNativeAuthToken() {
-        AccountManager am = AccountManager.get(this);
-
-        String tokenType = null;
-        if (isFacebookUser()) {
-            tokenType = AuthenticationConstant.FACEBOOK_AUTHTOKEN_TYPE;
-        } else {
-            tokenType = AuthenticationConstant.AUTHTOKEN_TYPE_FULL_ACCESS;
-        }
-
-
-        am.getAuthToken(getCurrentAccount(),
-                tokenType,
-                null,
-                true,
-                new AccountManagerCallback<Bundle>() {
-                    @Override
-                    public void run(AccountManagerFuture<Bundle> future) {
-                        Bundle authTokenBundle= null;
-                        try {
-                            authTokenBundle = future.getResult();
-                        } catch (OperationCanceledException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (AuthenticatorException e) {
-                            e.printStackTrace();
-                        }
-                        String authToken=authTokenBundle.get(AccountManager.KEY_AUTHTOKEN).toString();
-                        Toast.makeText(getBaseContext(), "Current user="+getUsername() + " || token=" +
-                                authToken, Toast.LENGTH_SHORT).show();
-                        currentToken = authToken;
-                    }
-                }, null);
     }
 
     public void performLogout() {
@@ -197,10 +129,6 @@ public class AuthenticaterActivity extends AppCompatActivity {
                 },
                 null
         );
-    }
-
-    public String getCurrentToken() {
-        return currentToken;
     }
 
 }

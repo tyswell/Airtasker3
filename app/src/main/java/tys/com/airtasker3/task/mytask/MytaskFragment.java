@@ -19,6 +19,7 @@ import tys.com.airtasker3.R;
 import tys.com.airtasker3.createtask.CreateTaskActivity;
 import tys.com.airtasker3.model.task.MyTask;
 import tys.com.airtasker3.task.TaskActivity;
+import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.recycleview.DividerItemDecoration;
 import tys.com.airtasker3.ui.recycleview.RecycleClickListener;
 import tys.com.airtasker3.ui.recycleview.RecyclerTouchListener;
@@ -39,6 +40,8 @@ public class MytaskFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        Toast.makeText(getContext(), ((BaseActivity)getActivity()).getUser().getNativeUserId() + "||token = " + ((BaseActivity)getActivity()).getUser().getToken(), Toast.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
     }
 

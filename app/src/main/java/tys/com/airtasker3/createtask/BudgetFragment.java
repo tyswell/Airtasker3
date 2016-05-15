@@ -14,10 +14,12 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import tys.com.airtasker3.R;
 import tys.com.airtasker3.constant.PageConstant;
+import tys.com.airtasker3.ui.BaseActivity;
 import tys.com.airtasker3.ui.NonSwipeViewPager;
 
 /**
@@ -44,6 +46,9 @@ public class BudgetFragment extends Fragment implements TextView.OnEditorActionL
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        Toast.makeText(getContext(), ((BaseActivity)getActivity()).getUser().getNativeUserId() + "||token = " + ((BaseActivity)getActivity()).getUser().getToken(), Toast.LENGTH_SHORT).show();
+
         return inflater.inflate(R.layout.fragment_create_task_budget, container, false);
     }
 
