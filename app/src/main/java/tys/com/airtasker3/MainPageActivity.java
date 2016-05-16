@@ -5,6 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
+import tys.com.airtasker3.constant.PageConstant;
 import tys.com.airtasker3.menu.MenuFragment;
 import tys.com.airtasker3.task.mytask.MytaskFragment;
 import tys.com.airtasker3.ui.BaseActivity;
@@ -45,10 +46,13 @@ public class MainPageActivity extends BaseActivity {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
     }
 
+
+
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new MenuFragment(), "ONE");
-        adapter.addFrag(new MytaskFragment(), "TWO");
+        adapter.addFrag(MytaskFragment.newInstance(PageConstant.PAGEMODE_MY_TASK), "TWO");
+        adapter.addFrag(MytaskFragment.newInstance(PageConstant.PAGEMODE_LIST_TASK), "THREE");
         viewPager.setAdapter(adapter);
     }
 

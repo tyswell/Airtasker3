@@ -112,7 +112,7 @@ public class TaskFragment extends Fragment {
         recyclerView.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
         recyclerView.setAdapter(adapter);
         recyclerView.setNestedScrollingEnabled(false);
-        commentRecycle.hasFixedSize();
+        recyclerView.hasFixedSize();
         recyclerView.addOnItemTouchListener(
                 new RecyclerTouchListener(context, recyclerView, listener));
     }
@@ -129,14 +129,6 @@ public class TaskFragment extends Fragment {
         public void onClick(View view, int position) {
         }
     };
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
-//            callWSMytask();
-        }
-    }
 
     private void callWSMytask() {
         progressDialog.setMessage(getResources().getString(R.string.waiting));

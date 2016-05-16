@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tys.com.airtasker3.R;
-import tys.com.airtasker3.createtask.CreateTaskActivity;
 import tys.com.airtasker3.model.task.MyTask;
 import tys.com.airtasker3.task.TaskActivity;
 import tys.com.airtasker3.ui.BaseActivity;
@@ -30,6 +29,7 @@ import tys.com.airtasker3.ui.recycleview.RecyclerTouchListener;
 public class MytaskFragment extends Fragment {
 
     private String TAG = MytaskFragment.class.getSimpleName();
+    private static final String PAGEMODE_VALUE = "PAGEMODE_VALUE";
 
     private RecyclerView recyclerView;
     private MytaskAdapter adapter;
@@ -38,11 +38,24 @@ public class MytaskFragment extends Fragment {
 
     private ProgressDialog progressDialog;
 
+    private int pageMode;
+
+    public static MytaskFragment newInstance(int pageMode) {
+        MytaskFragment fragment = new MytaskFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(PAGEMODE_VALUE, pageMode);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
-        Toast.makeText(getContext(), ((BaseActivity)getActivity()).getUser().getNativeUserId() + "||token = " + ((BaseActivity)getActivity()).getUser().getToken(), Toast.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
+
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            pageMode = bundle.getInt(PAGEMODE_VALUE);
+        }
     }
 
     @Override
@@ -68,11 +81,10 @@ public class MytaskFragment extends Fragment {
     }
 
     @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
-            callWSMytask();
-        }
+    public void onStart() {
+        super.onStart();
+
+        callWSMytask();
     }
 
     private RecycleClickListener listener = new RecycleClickListener() {
@@ -89,7 +101,7 @@ public class MytaskFragment extends Fragment {
 
         //TODO call WS
         myTasks.clear();
-        myTasks.addAll(TempModel.getModel(getActivity()));
+        myTasks.addAll(TempModel.getModel(getActivity(), pageMode));
 
         adapter.notifyDataSetChanged();
         progressDialog.hide();

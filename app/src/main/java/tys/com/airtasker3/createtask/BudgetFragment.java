@@ -47,8 +47,6 @@ public class BudgetFragment extends Fragment implements TextView.OnEditorActionL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        Toast.makeText(getContext(), ((BaseActivity)getActivity()).getUser().getNativeUserId() + "||token = " + ((BaseActivity)getActivity()).getUser().getToken(), Toast.LENGTH_SHORT).show();
-
         return inflater.inflate(R.layout.fragment_create_task_budget, container, false);
     }
 

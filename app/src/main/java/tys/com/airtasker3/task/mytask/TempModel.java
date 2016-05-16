@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tys.com.airtasker3.R;
+import tys.com.airtasker3.constant.PageConstant;
 import tys.com.airtasker3.model.task.Client;
 import tys.com.airtasker3.model.task.MyTask;
 import tys.com.airtasker3.model.task.Task;
@@ -21,7 +22,7 @@ import tys.com.airtasker3.model.task.TaskOffer;
  */
 public class TempModel {
 
-    public static List<MyTask> getModel(Context context) {
+    public static List<MyTask> getModel(Context context, int pagemode) {
         List<MyTask> result = new ArrayList<>();
 
         Drawable d = context.getResources().getDrawable(R.mipmap.ic_launcher); // the drawable (Captain Obvious, to the rescue!!!)
@@ -32,41 +33,63 @@ public class TempModel {
 
         MyTask a = new MyTask();
         a.setTaskId(1);
-        a.setTitle("Task A");
+
         a.setOnline(false);
         a.setLocationDetail("2308 สุขุมวิท64 บางจาก พระโขนง กทม. 10260");
         a.setTotalBudget(600);
         a.setStatus(0);
         a.setNumComment(5);
         a.setNumOffer(8);
-        a.setClientPicture(bitmapdata);
-        a.setClientImageUrl(null);
+
+
+        if (pagemode == PageConstant.PAGEMODE_MY_TASK) {
+            a.setTitle("MY TASK A");
+            a.setClientPicture(bitmapdata);
+            a.setClientImageUrl(null);
+        } else {
+            a.setTitle("LIST TASK A");
+            a.setClientPicture(null);
+            a.setClientImageUrl("http://graph.facebook.com/67563683055/picture?type=square");
+        }
+
         result.add(a);
 
         MyTask b = new MyTask();
         b.setTaskId(2);
-        b.setTitle("Task b");
         b.setOnline(false);
         b.setLocationDetail("2310 สุขุมวิท64 บางจาก พระโขนง กทม. 10260");
         b.setTotalBudget(700);
         b.setStatus(1);
         b.setNumComment(2);
         b.setNumOffer(3);
-        b.setClientPicture(null);
-        b.setClientImageUrl("http://graph.facebook.com/67563683055/picture?type=square");
+        if (pagemode == PageConstant.PAGEMODE_MY_TASK) {
+            b.setTitle("MY TASK B");
+            b.setClientPicture(bitmapdata);
+            b.setClientImageUrl(null);
+        } else {
+            b.setTitle("LIST TASK B");
+            b.setClientPicture(null);
+            b.setClientImageUrl("http://graph.facebook.com/67563683055/picture?type=square");
+        }
         result.add(b);
 
         MyTask c = new MyTask();
         c.setTaskId(2);
-        c.setTitle("Task b");
         c.setOnline(true);
         c.setLocationDetail(null);
         c.setTotalBudget(800);
         c.setStatus(2);
         c.setNumComment(1);
         c.setNumOffer(0);
-        c.setClientPicture(null);
-        c.setClientImageUrl("http://graph.facebook.com/67563683055/picture?type=square");
+        if (pagemode == PageConstant.PAGEMODE_MY_TASK) {
+            c.setTitle("MY TASK C");
+            c.setClientPicture(bitmapdata);
+            c.setClientImageUrl(null);
+        } else {
+            c.setTitle("LIST TASK C");
+            c.setClientPicture(null);
+            c.setClientImageUrl("http://graph.facebook.com/67563683055/picture?type=square");
+        }
         result.add(c);
 
 

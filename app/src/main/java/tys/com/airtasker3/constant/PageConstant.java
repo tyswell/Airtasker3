@@ -13,4 +13,7 @@ public class PageConstant {
 
     public static final int TASK_PAGE = 0;
 
+    public static final int PAGEMODE_MY_TASK = 1;
+    public static final int PAGEMODE_LIST_TASK = 2;
+
 }
